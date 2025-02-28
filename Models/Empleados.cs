@@ -44,6 +44,10 @@ namespace NominaApp.Models
 
         [InverseProperty("Empleado")]
         public virtual ICollection<Prestamos> Prestamos { get; set; } = new List<Prestamos>();
+
+        [InverseProperty("Empleado")]
+        public virtual ICollection<PagosNomina> PagosNomina { get; set; } = new List<PagosNomina>();
+
         // Metodos
 
         /// <summary>

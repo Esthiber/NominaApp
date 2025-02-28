@@ -23,5 +23,8 @@ namespace NominaApp.Models
         [ForeignKey("EmpleadoId")]
         [InverseProperty("Prestamos")]
         public Empleados Empleado { get; set; } = null;
+
+        [InverseProperty("Prestamo")]
+        public virtual ICollection<Abonos> Abonos { get; set; } = new List<Abonos>();
     }
 }

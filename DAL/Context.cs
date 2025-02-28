@@ -103,9 +103,6 @@ namespace NominaApp.DAL
                 new PagosNomina { PagoNominaId = 2, EmpleadoId = 2, Fecha = new DateTime(2025, 2, 27), SueldoBruto = 60000, Descuentos = 10000, SueldoNeto = 50000 }
             );
 
-
-
-
             base.OnModelCreating(modelBuilder);
         }
     }

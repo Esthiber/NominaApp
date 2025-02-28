@@ -1,10 +1,16 @@
+using Microsoft.EntityFrameworkCore;
 using NominaApp.Components;
+using NominaApp.DAL;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+//Inyeccion del contexto
+var ConStr = builder.Configuration.GetConnectionString("ConStr");
+builder.Services.AddDbContextFactory<Context>(o => o.UseSqlServer(ConStr));
 
 var app = builder.Build();
 

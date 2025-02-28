@@ -39,6 +39,8 @@ namespace NominaApp.Models
         [ForeignKey("DepartamentoId")]
         public virtual Departamentos? Departamento { get; set; } = null;
 
+        [InverseProperty("Empleado")]
+        public virtual ICollection<HorasExtra> HorasExtras { get; set; } = new List<HorasExtra>();
 
         // Metodos
 

@@ -6,7 +6,7 @@ namespace NominaApp.Models
     public class Empleados
     {
         [Key]
-        public int Id { get; set; }
+        public int EmpleadoId { get; set; }
 
         [Required(ErrorMessage = "El Nombre es Requerido.")]
         public required string Nombre { get; set; }
@@ -42,6 +42,8 @@ namespace NominaApp.Models
         [InverseProperty("Empleado")]
         public virtual ICollection<HorasExtra> HorasExtras { get; set; } = new List<HorasExtra>();
 
+        [InverseProperty("Empleado")]
+        public virtual ICollection<Prestamos> Prestamos { get; set; } = new List<Prestamos>();
         // Metodos
 
         /// <summary>

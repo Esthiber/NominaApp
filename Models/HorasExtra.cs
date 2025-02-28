@@ -6,7 +6,7 @@ namespace NominaApp.Models
     public class HorasExtra
     {
         [Key]
-        public int Id { get; set; }
+        public int HorasExtraId { get; set; }
         
         [Required(ErrorMessage ="Requerido Empleado")]
         public int EmpleadoId { get; set; }
@@ -21,6 +21,6 @@ namespace NominaApp.Models
 
         [ForeignKey("EmpleadoId")]
         [InverseProperty("HorasExtras")]
-        public Empleados empleado { get; set; } = null;
+        public Empleados Empleado { get; set; } = null;
     }
 }
